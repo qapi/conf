@@ -33,6 +33,12 @@ func (c *Conf) Int(key string) int {
 		if ok {
 			return v
 		}
+		
+		f, ok := val.(float64)
+		
+		if ok {
+			return int(f)
+		}
 
 		return 0
 	}
